@@ -1,0 +1,179 @@
+[
+  {
+    "id": 1,
+    "title": "Mastering the Trend Engine: A Complete Guide",
+    "excerpt": "Learn how the AI Trend Engine processes multi-timeframe data to find the highest probability setups in the current market conditions.",
+    "category": "Trend Engine",
+    "author": "Trading Monster Team",
+    "date": "Feb 15, 2026",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=2070&auto=format&fit=crop",
+    "videoUrl": "https://youtu.be/xYpUIA-L68Q?si=wWmzrLITVYtevkft",
+    "isFeatured": true,
+    "content": "\n      <p>Turn AI-built strategies into live, automated signals with Trading Monster's AI Trend Engine. Discover, stress-test, and \"Dive Deeper\" into any strategy, then stream precise entry/exit alerts to your screen, inbox, or bots. All synced with your existing Trading Monster workflow.</p>\n      <h3>The next step for our AI Platform</h3>\n      <p>Markets aren't getting easier. Institutional models are getting faster, retail tools are more automated, and the edge now belongs to traders who can combine human intelligence with machine-level execution.</p>\n      <p>Over the last year, our <a href=\"#\">AI platform</a> has grown from a simple strategy finder into a full backtesting engine: it understands the majority of technical analysis concepts traders use every day (yes, even order blocks, mean reversion, market structure, etc), it searches through millions of backtested strategies across every market, and it lets you save those strategies to your account & do further analysis on-platform or even on TradingView too.</p>\n      <p>Today's update is about what happens next.</p>\n    ",
+    "bottomContent": "\n      <p>With <strong>AI Trend Engine</strong>, you're no longer just discovering & analyzing strategies, you're deploying them. Any strategy you pull from the Trading Monster AI can now fire live alerts: to your screen, your inbox, or via webhooks to route orders to your broker, exchange, or prop firm.</p>\n      <p>This is the missing bridge between \"that backtest looks great\" and \"this setup is actually firing on my account right now.\"</p>\n      <h3>From millions of strategies to the one you actually trade</h3>\n      <p>Stop trying to manually execute complex, multi-timeframe strategies. Let the engine do the heavy lifting while you focus on risk management and overall market direction.</p>\n    "
+  },
+  {
+    "id": 2,
+    "title": "Spotting Reversals with Momentum Scanner",
+    "excerpt": "Learn the secrets of identifying market reversals using our Momentum Scanner to stay ahead of trend shifts.",
+    "category": "Momentum Scanner",
+    "author": "Alex Pierrefou",
+    "date": "Jan 22, 2026",
+    "image": "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Spotting reversals early is the holy grail of momentum trading. The Trading Monster Momentum Scanner is designed to scan across multiple assets in real-time, detecting hidden divergence patterns that precede major market shifts.</p>\n      <h3>Divergence: The Lead Indicator</h3>\n      <p>Most indicators lag because they only calculate past price data. Divergence occurs when the price makes a new high/low, but the momentum indicator fails to follow suit. This mismatch indicates a exhaustion of the current trend.</p>\n      <p>Our AI combines RSI, MACD, and volume flow to filter out minor pullbacks and highlight structural reversals.</p>\n    ",
+    "bottomContent": "\n      <p>Remember that reversals should always be confirmed with key support/resistance levels. The Momentum Scanner gives you the setup, but your chart structure provides the validation.</p>\n    "
+  },
+  {
+    "id": 3,
+    "title": "Trading Gold (XAUUSD) like a Pro",
+    "excerpt": "An in-depth breakdown of gold trading strategies using the 15-minute timeframe and structural filters.",
+    "category": "Gold Strategy",
+    "author": "Brady Young",
+    "date": "Jan 18, 2026",
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Gold is one of the most volatile and heavily traded assets in the world. Due to its unique liquidity profile, standard retail strategies often get swept out by institutional liquidity runs.</p>\n      <h3>The 15-Minute Gold Blueprint</h3>\n      <p>To successfully trade XAUUSD, we look at the intersection of London and New York sessions. Our Gold Strategy focuses specifically on the 15-minute chart, looking for high-volume sweeps of session highs or lows followed by structural displacement.</p>\n      <p>By monitoring the order flow and using the Trading Monster AI engine, we isolate the exact moments when institutional players are entering the market.</p>\n    ",
+    "bottomContent": "\n      <p>Keep your stop losses tight and never trade gold without acknowledging the daily macroeconomic news calendar, as interest rate decisions and CPI releases directly fuel gold volatility.</p>\n    "
+  },
+  {
+    "id": 4,
+    "title": "Avoiding Fakeouts: The Breakout Checklist",
+    "excerpt": "A systematic checklist to help you filter false breakouts and capture true expansion moves.",
+    "category": "Breakout",
+    "author": "Sean Mackay",
+    "date": "Jan 12, 2026",
+    "image": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Breakout trading is highly profitable when it works, but incredibly frustrating when you get trapped in a fakeout. A fakeout occurs when price breaks a boundary level, triggers stop orders, and immediately reverses.</p>\n      <h3>The 3-Step Breakout Filter</h3>\n      <p>1. <strong>Volume Confirmation:</strong> A true breakout must be accompanied by above-average volume. Without participation, the move will collapse.</p>\n      <p>2. <strong>Timeframe Alignment:</strong> Ensure the higher timeframe trend supports the breakout direction. If you are breaking out to the upside on the 15M chart, but the 4H chart is heavily bearish, the odds are against you.</p>\n      <p>3. <strong>The Retest Rule:</strong> Wait for a candle close above the level, or even better, a retest of the broken boundary acting as new support/resistance.</p>\n    ",
+    "bottomContent": "\n      <p>By executing this checklist systematically, you will filter out over 70% of false breakouts, preserving your capital for the high-probability moves.</p>\n    "
+  },
+  {
+    "id": 5,
+    "title": "Why Multi-Timeframe Alignment is Crucial",
+    "excerpt": "Understand why checking multiple timeframes will dramatically increase your butter win rate.",
+    "category": "Trend Engine",
+    "author": "Christopher Downie",
+    "date": "Jan 10, 2026",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Trading in the direction of the macro trend is the easiest way to improve your win rate. However, many traders get lost in the noise of low timeframes and trade directly into macro brick walls.</p>\n      <h3>Aligning the Stars</h3>\n      <p>At Trading Monster, our Trend Engine looks at three core timeframes simultaneously:</p>\n      <ul>\n        <li><strong>Macro (4H/Daily):</strong> Determines the overall market bias. We only take trades in this direction.</li>\n        <li><strong>Medium (1H):</strong> Establishes the key structural zones and intraday trends.</li>\n        <li><strong>Micro (15M/5M):</strong> Used for precision entry, trigger confirmation, and risk optimization.</li>\n      </ul>\n    ",
+    "bottomContent": "\n      <p>When all three timeframes point in the same direction, you get a high-confluence entry signal. This alignment is the core foundation of our AI algorithm.</p>\n    "
+  },
+  {
+    "id": 10,
+    "title": "Advanced Engine Adjustments",
+    "excerpt": "Fine-tune the AI Trend Engine parameters to match different volatility regimes.",
+    "category": "Trend Engine",
+    "author": "Alex Pierrefou",
+    "date": "Jan 08, 2026",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Markets shift between low-volatility consolidation and high-volatility expansion. To maximize efficiency, traders must know how to adjust the Trend Engine sensitivity levels.</p>\n      <h3>Sensitivity and Volatility Parameters</h3>\n      <p>In low-volatility environments, reduce the engine sensitivity to avoid over-trading sideways noise. During high-volatility expansions (such as earnings season or major central bank weeks), increase sensitivity to catch quick breakout runs.</p>\n    "
+  },
+  {
+    "id": 11,
+    "title": "Riding the Wave to Profit",
+    "excerpt": "Tips and guidelines on trailing stop losses to capture maximum trend length.",
+    "category": "Trend Engine",
+    "author": "Brady Young",
+    "date": "Jan 07, 2026",
+    "image": "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Entering a trade is only 20% of the battle; the remaining 80% is trade management. Many traders cut their winning trades short out of fear, missing out on massive trends.</p>\n      <h3>The Trailing ATR Method</h3>\n      <p>Our Trend Engine utilizes an Average True Range (ATR) trailing stop-loss mechanism. This adjusts your risk dynamically based on current market volatility, ensuring you give the trade enough breathing room without risking too much capital.</p>\n    "
+  },
+  {
+    "id": 12,
+    "title": "When to trust the Trend Line",
+    "excerpt": "Distinguishing valid trend line bounces from structural distribution patterns.",
+    "category": "Trend Engine",
+    "author": "Brady Young",
+    "date": "Jan 06, 2026",
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Trend lines are one of the most widely used concepts in retail trading. Unfortunately, this makes them prime targets for institutional stop-hunting liquidity sweeps.</p>\n      <h3>Three-Point Validation</h3>\n      <p>A trend line is only valid if it has three distinct touches with clean impulse moves originating from each touch. If price consolidates right on top of the trend line on the fourth touch, it is likely distributing and preparing for a breakdown.</p>\n    "
+  },
+  {
+    "id": 13,
+    "title": "Is it a trend or a trap?",
+    "excerpt": "How to use volume profiles and delta to spot institutional accumulation.",
+    "category": "Trend Engine",
+    "author": "Christopher Downie",
+    "date": "Jan 05, 2026",
+    "image": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>A trend without volume support is a trap. When the price rises on declining volume and negative order-book delta, it represents a lack of buying pressure and is highly susceptible to sudden dumps.</p>\n      <h3>Using Volume Profile</h3>\n      <p>Ensure the Point of Control (POC) is shifting higher with the price trend. If the POC remains stuck at the bottom of the move while price drifts upward, institutions are distributing their positions into retail buyers.</p>\n    "
+  },
+  {
+    "id": 20,
+    "title": "How to Use the Momentum Scanner Effectively",
+    "excerpt": "A starter guide to setting up alerts and filters in the Momentum Scanner.",
+    "category": "Momentum Scanner",
+    "author": "Sean Mackay",
+    "date": "Jan 12, 2026",
+    "image": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>The Momentum Scanner runs 24/7, processing hundreds of setups. Without proper filters, you will suffer from alert fatigue. This guide shows you how to customize the scanner to match your specific style.</p>\n      <h3>Filtering by Asset Class and Volatility</h3>\n      <p>Set a minimum average daily range (ADR) filter to ignore illiquid assets. For crypto, select high-cap options to avoid pump-and-dump coins. For forex, focus on G10 currencies during London and NY sessions.</p>\n    "
+  },
+  {
+    "id": 21,
+    "title": "Finding the Reversal: Momentum Tips",
+    "excerpt": "Advanced tactics to time entries right at the exhausting point of trends.",
+    "category": "Momentum Scanner",
+    "author": "Sean Mackay",
+    "date": "Nov 26, 2025",
+    "image": "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Timing a reversal is about spotting exhaustion. We look at the Rate of Change (ROC) and Volume Spread Analysis (VSA) to confirm that the prevailing trend is running out of steam before entering our counter-trend positions.</p>\n    "
+  },
+  {
+    "id": 22,
+    "title": "Combining Momentum with Price Action",
+    "excerpt": "Why indicator-only strategies fail and how price action confluence changes the game.",
+    "category": "Momentum Scanner",
+    "author": "Brady Young",
+    "date": "Sep 29, 2025",
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Indicators are derivatives of price. Trading momentum indicator crossovers blindly is a recipe for drawdown. Instead, wait for the scanner to flag a momentum divergence, then seek a price action trigger (like an engulfing candle or market structure shift) before executing.</p>\n    "
+  },
+  {
+    "id": 23,
+    "title": "Divergence Trading on the Scanner",
+    "excerpt": "Hidden vs regular divergence patterns and how to exploit them.",
+    "category": "Momentum Scanner",
+    "author": "Alex Pierrefou",
+    "date": "Sep 15, 2025",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Regular divergence signals a potential trend reversal, while hidden divergence signals trend continuation. Learn how our scanner differentiates these two patterns and how to ride the continuation for higher win rates.</p>\n    "
+  },
+  {
+    "id": 30,
+    "title": "QUANT: AI for Pine Script Trading",
+    "excerpt": "How to use our AI script generator to instantly write custom TradingView strategies.",
+    "category": "Breakout",
+    "author": "Alex Pierrefou",
+    "date": "Feb 10, 2026",
+    "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Writing Pine Script can take hours of debugging. With Trading Monster's QUANT AI, you can describe your strategy in plain English and receive fully optimized, backtest-ready Pine Script in seconds.</p>\n      <h3>Backtest Directly on TradingView</h3>\n      <p>Copy the generated code, paste it into the TradingView Pine Editor, and instantly see the historical performance, drawdowns, and profit factors of your ideas.</p>\n    "
+  },
+  {
+    "id": 31,
+    "title": "Volume Pitfalls: How to avoid them",
+    "excerpt": "Understanding the role of volume in confirming trend break integrity.",
+    "category": "Breakout",
+    "author": "Sean Mackay",
+    "date": "Feb 08, 2026",
+    "image": "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Volume is the fuel of market movement. If a breakout occurs on low volume, it represents a lack of professional backing. Learn how to interpret volume spread analysis to avoid getting trapped in low-liquidity spikes.</p>\n    "
+  },
+  {
+    "id": 32,
+    "title": "How I use GPT-5 to Analyze and Trade Stocks",
+    "excerpt": "An overview of leveraging LLMs for financial sentiment and options flow parsing.",
+    "category": "Breakout",
+    "author": "Brady Young",
+    "date": "Feb 05, 2026",
+    "image": "https://images.unsplash.com/photo-1633412802994-5c058f151b66?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>Artificial Intelligence has revolutionized quantitative analysis. Learn how to integrate LLMs like GPT-5 into your daily routing to synthesize market news, parse earnings transcripts, and find asymmetric setups.</p>\n    "
+  },
+  {
+    "id": 33,
+    "title": "Analyzing the 15M Gold Strategy",
+    "excerpt": "Reviewing the statistical performance of our proprietary XAUUSD indicator set.",
+    "category": "Gold Strategy",
+    "author": "Christopher Downie",
+    "date": "Feb 01, 2026",
+    "image": "https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?q=80&w=1000&auto=format&fit=crop",
+    "content": "\n      <p>In this post, we review the backtest data for our 15M Gold Strategy over the last 12 months. With a profit factor of 2.1 and a maximum drawdown of 8.5%, see why XAUUSD remains a favorite for algorithmic execution.</p>\n    "
+  }
+]
