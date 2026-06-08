@@ -18,6 +18,8 @@ const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || "super_secret_monster_trading_key";
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || "admin";
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "monster123";
+const EADMIN_USERNAME = process.env.EADMIN_USERNAME || "eadmin";
+const EADMIN_PASSWORD = process.env.EADMIN_PASSWORD || "eadmin123";
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
 // Initialize Stripe if key available
@@ -69,6 +71,20 @@ const blogSchema = new mongoose.Schema({
 });
 
 const Blog = mongoose.model("Blog", blogSchema);
+
+// Define Mongoose Schema for Daily Results
+const dailyResultSchema = new mongoose.Schema({
+    id: { type: Number, required: true, unique: true },
+    title: { type: String, required: true },
+    date: { type: String },
+    image: { type: String, default: "" },
+    videoUrl: { type: String, default: "" },
+    content: { type: String, required: true }
+}, {
+    timestamps: true
+});
+
+const DailyResult = mongoose.model("DailyResult", dailyResultSchema);
 
 // Connect to MongoDB and seed if empty
 mongoose.connect(MONGODB_URI)
@@ -137,6 +153,13 @@ const optionalAuthenticateToken = (req, res, next) => {
         next();
     });
 };
+// Middleware to ensure user is admin or eadmin
+const requireAdminOrEadmin = (req, res, next) => {
+    if (!req.user || (req.user.role !== "admin" && req.user.role !== "eadmin")) {
+        return res.status(403).json({ error: "Access Denied: Admin or Editor rights required" });
+    }
+    next();
+};
 
 /* ==========================================================================
    AUTHENTICATION ENDPOINTS
@@ -149,10 +172,13 @@ app.post("/api/login", (req, res) => {
         return res.status(400).json({ error: "Username and password are required" });
     }
 
-    if (username.trim() === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-        // Sign and return a JWT valid for 24h
+    const trimmedUsername = username.trim();
+    if (trimmedUsername === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
         const token = jwt.sign({ username: ADMIN_USERNAME, role: "admin" }, JWT_SECRET, { expiresIn: "24h" });
-        return res.json({ token, message: "Authentication successful!" });
+        return res.json({ token, username: ADMIN_USERNAME, role: "admin", message: "Authentication successful!" });
+    } else if (trimmedUsername === EADMIN_USERNAME && password === EADMIN_PASSWORD) {
+        const token = jwt.sign({ username: EADMIN_USERNAME, role: "eadmin" }, JWT_SECRET, { expiresIn: "24h" });
+        return res.json({ token, username: EADMIN_USERNAME, role: "eadmin", message: "Authentication successful!" });
     }
 
     return res.status(401).json({ error: "Invalid username or password" });
@@ -166,8 +192,8 @@ app.post("/api/login", (req, res) => {
 app.get("/api/blogs", optionalAuthenticateToken, async (req, res) => {
     try {
         let query = {};
-        // If not admin, exclude drafts
-        if (!req.user || req.user.role !== "admin") {
+        // If not admin/eadmin, exclude drafts
+        if (!req.user || (req.user.role !== "admin" && req.user.role !== "eadmin")) {
             query.status = { $ne: "draft" };
         }
         
@@ -191,9 +217,9 @@ app.get("/api/blogs/:id", optionalAuthenticateToken, async (req, res) => {
             return res.status(404).json({ error: "Article not found" });
         }
 
-        // If it's a draft and visitor is not admin, deny access
+        // If it's a draft and visitor is not admin/eadmin, deny access
         if (post.status === "draft") {
-            if (!req.user || req.user.role !== "admin") {
+            if (!req.user || (req.user.role !== "admin" && req.user.role !== "eadmin")) {
                 return res.status(403).json({ error: "Access Denied: This article is a draft" });
             }
         }
@@ -206,7 +232,7 @@ app.get("/api/blogs/:id", optionalAuthenticateToken, async (req, res) => {
 });
 
 // POST create a new blog
-app.post("/api/blogs", authenticateToken, async (req, res) => {
+app.post("/api/blogs", authenticateToken, requireAdminOrEadmin, async (req, res) => {
     try {
         const {
             title, excerpt, category, author, date,
@@ -255,7 +281,7 @@ app.post("/api/blogs", authenticateToken, async (req, res) => {
 });
 
 // PUT update a blog post
-app.put("/api/blogs/:id", authenticateToken, async (req, res) => {
+app.put("/api/blogs/:id", authenticateToken, requireAdminOrEadmin, async (req, res) => {
     try {
         const { id } = req.params;
         const {
@@ -311,7 +337,7 @@ app.put("/api/blogs/:id", authenticateToken, async (req, res) => {
 });
 
 // DELETE a blog post
-app.delete("/api/blogs/:id", authenticateToken, async (req, res) => {
+app.delete("/api/blogs/:id", authenticateToken, requireAdminOrEadmin, async (req, res) => {
     try {
         const { id } = req.params;
         const queryId = Number(id);
@@ -325,6 +351,117 @@ app.delete("/api/blogs/:id", authenticateToken, async (req, res) => {
     } catch (error) {
         console.error("Error deleting blog:", error);
         return res.status(500).json({ error: "Failed to delete article from database." });
+    }
+});
+
+/* ==========================================================================
+   DAILY RESULTS ENDPOINTS (REST API)
+   ========================================================================== */
+
+// GET all daily results
+app.get("/api/daily-results", async (req, res) => {
+    try {
+        const results = await DailyResult.find().sort({ id: -1 });
+        return res.json(results);
+    } catch (error) {
+        console.error("Error fetching daily results:", error);
+        return res.status(500).json({ error: "Failed to fetch daily results from database." });
+    }
+});
+
+// GET single daily result by ID
+app.get("/api/daily-results/:id", async (req, res) => {
+    try {
+        const { id } = req.params;
+        const queryId = Number(id);
+        const result = await DailyResult.findOne({ id: isNaN(queryId) ? id : queryId });
+
+        if (!result) {
+            return res.status(404).json({ error: "Daily result not found" });
+        }
+
+        return res.json(result);
+    } catch (error) {
+        console.error("Error fetching daily result:", error);
+        return res.status(500).json({ error: "Failed to fetch daily result details." });
+    }
+});
+
+// POST create a new daily result
+app.post("/api/daily-results", authenticateToken, requireAdminOrEadmin, async (req, res) => {
+    try {
+        const { title, date, image, videoUrl, content } = req.body;
+
+        if (!title || !content) {
+            return res.status(400).json({ error: "Title and content are required." });
+        }
+
+        // Get maximum id in collection to generate the next unique numeric ID
+        const maxIdResult = await DailyResult.findOne().sort({ id: -1 });
+        const newId = maxIdResult ? (Number(maxIdResult.id) || 0) + 1 : 1;
+
+        const newResultData = {
+            id: newId,
+            title,
+            date: date || new Date().toLocaleDateString("en-US", { year: "numeric", month: "short", day: "2-digit" }),
+            image: image || "",
+            videoUrl: videoUrl || "",
+            content
+        };
+
+        const newResult = new DailyResult(newResultData);
+        await newResult.save();
+
+        return res.status(201).json(newResult);
+    } catch (error) {
+        console.error("Error creating daily result:", error);
+        return res.status(500).json({ error: "Failed to create daily result in database." });
+    }
+});
+
+// PUT update a daily result
+app.put("/api/daily-results/:id", authenticateToken, requireAdminOrEadmin, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { title, date, image, videoUrl, content } = req.body;
+
+        const queryId = Number(id);
+        const result = await DailyResult.findOne({ id: isNaN(queryId) ? id : queryId });
+
+        if (!result) {
+            return res.status(404).json({ error: "Daily result not found" });
+        }
+
+        // Update fields if provided in request
+        if (title !== undefined) result.title = title;
+        if (date !== undefined) result.date = date;
+        if (image !== undefined) result.image = image;
+        if (videoUrl !== undefined) result.videoUrl = videoUrl;
+        if (content !== undefined) result.content = content;
+
+        await result.save();
+        return res.json(result);
+    } catch (error) {
+        console.error("Error updating daily result:", error);
+        return res.status(500).json({ error: "Failed to update daily result in database." });
+    }
+});
+
+// DELETE a daily result
+app.delete("/api/daily-results/:id", authenticateToken, requireAdminOrEadmin, async (req, res) => {
+    try {
+        const { id } = req.params;
+        const queryId = Number(id);
+        const result = await DailyResult.deleteOne({ id: isNaN(queryId) ? id : queryId });
+
+        if (result.deletedCount === 0) {
+            return res.status(404).json({ error: "Daily result not found" });
+        }
+
+        return res.json({ message: "Daily result deleted successfully", id });
+    } catch (error) {
+        console.error("Error deleting daily result:", error);
+        return res.status(500).json({ error: "Failed to delete daily result from database." });
     }
 });
 
